@@ -1,0 +1,21 @@
+[submodule "vendor/github.com/revel/revel"]
+	path = vendor/github.com/revel/revel
+	url = git@github.com:revel/revel.git
+[submodule "vendor/github.com/huacnlee/train"]
+	path = vendor/github.com/huacnlee/train
+	url = git@github.com:revel/revel.git
+[submodule "vendor/github.com/qor/admin"]
+	path = vendor/github.com/qor/admin
+	url = git@github.com:qor/admin.git
+[submodule "vendor/github.com/qor/publish"]
+	path = vendor/github.com/qor/publish
+	url = git@github.com:qor/publish.git
+[submodule "vendor/github.com/qor/qor"]
+	path = vendor/github.com/qor/qor
+	url = git@github.com:qor/qor.git
+[submodule "vendor/github.com/qor/sorting"]
+	path = vendor/github.com/qor/sorting
+	url = git@github.com:qor/sorting.git
+[submodule "vendor/github.com/qor/validations"]
+	path = vendor/github.com/qor/validations
+	url = git@github.com:qor/validations.git
