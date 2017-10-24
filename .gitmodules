@@ -3,7 +3,7 @@
 	url = git@github.com:revel/revel.git
 [submodule "vendor/github.com/huacnlee/train"]
 	path = vendor/github.com/huacnlee/train
-	url = git@github.com:revel/revel.git
+url=git@github.com:huacnlee/train.git
 [submodule "vendor/github.com/qor/admin"]
 	path = vendor/github.com/qor/admin
 	url = git@github.com:qor/admin.git
@@ -19,3 +19,34 @@
 [submodule "vendor/github.com/qor/validations"]
 	path = vendor/github.com/qor/validations
 	url = git@github.com:qor/validations.git
+[submodule "vendor/github.com/russross/blackfriday"]
+	path = vendor/github.com/russross/blackfriday
+	url = git@github.com:russross/blackfriday.git
+	branch = v2
+[submodule "vendor/github.com/bradfitz/gomemcache"]
+	path = vendor/github.com/bradfitz/gomemcache
+	url = git@github.com:qor/qor.git
+[submodule "vendor/github.com/dchest/captcha"]
+	path = vendor/github.com/dchest/captcha
+	url = git@github.com:dchest/captcha.git
+[submodule "vendor/github.com/gosimple/slug"]
+	path = vendor/github.com/gosimple/slug
+	url = git@github.com:gosimple/slug.git
+[submodule "vendor/github.com/huacnlee/timeago"]
+	path = vendor/github.com/huacnlee/timeago
+	url = git@github.com:huacnlee/timeago.git
+[submodule "vendor/github.com/microcosm-cc/bluemonday"]
+	path = vendor/github.com/microcosm-cc/bluemonday
+	url = git@github.com:microcosm-cc/bluemonday.git
+[submodule "vendor/github.com/qor/assetfs"]
+	path = vendor/github.com/qor/assetfs
+	url = git@github.com:qor/assetfs.git
+[submodule "vendor/github.com/qor/l10n"]
+	path = vendor/github.com/qor/l10n
+	url = git@github.com:qor/l10n.git
+[submodule "vendor/github.com/qor/responder"]
+	path = vendor/github.com/qor/responder
+	url = git@github.com:qor/responder.git
+[submodule "vendor/github.com/qor/roles"]
+	path = vendor/github.com/qor/roles
+	url = git@github.com:qor/roles.git
