@@ -31,6 +31,8 @@ func (c Accounts) New() revel.Result {
 }
 
 func (c Accounts) Create() revel.Result {
+	//关闭注册
+	return c.Render()
 	u := User{}
 	newUser := User{}
 

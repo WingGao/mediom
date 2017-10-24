@@ -30,9 +30,10 @@ func init() {
 	if revel.RunMode == "prod" {
 		train.Config.AssetsPath = "src/github.com/huacnlee/mediom/app/assets"
 	}
+	train.Config.AssetsUrl = "/bbs/assets/"
 	train.Config.SASS.DebugInfo = false
 	train.Config.SASS.LineNumbers = false
-	train.Config.Verbose = false
+	train.Config.Verbose = true
 	train.Config.BundleAssets = true
 
 	// csrf.ExemptedGlob("/msg")
@@ -52,7 +53,7 @@ func init() {
 }
 
 var AssetsFilter = func(c *revel.Controller, fc []revel.Filter) {
-	if strings.HasPrefix(c.Request.URL.Path, "/assets") {
+	if strings.HasPrefix(c.Request.URL.Path, train.Config.AssetsUrl) {
 		train.ServeRequest(c.Response.Out, c.Request.Request)
 	} else {
 		fc[0](c, fc[1:])

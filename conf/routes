@@ -1,47 +1,48 @@
-GET     /				Home.Index
-WS      /msg                      Home.Message
-GET     /search         Home.Search
-
-GET 		/signup 			Accounts.New
-POST   	/signup 			Accounts.Create
-GET 		/signin 			Accounts.Login
-POST		/signin			Accounts.LoginCreate
-POST    /signout         Accounts.Logout
-GET     /account/edit     Accounts.Edit
-POST    /account          Accounts.Update
-GET     /account/password     Accounts.Password
-POST    /account/password/update     Accounts.UpdatePassword
-
-GET     /topics           Topics.Index
-GET     /topics/feed           Topics.Feed
-GET     /topics/node/:node_id      Topics.Index("node")
-GET     /topics/popular           Topics.Index("popular")
-GET     /topics/recent           Topics.Index("recent")
-
-GET     /topics/new       Topics.New
-GET     /topics/:id       Topics.Show
-GET     /topics/:id/edit       Topics.Edit
-POST    /topics/:id       Topics.Update
-POST    /topics           Topics.Create
-POST    /topics/:id/delete       Topics.Delete
-POST    /topics/:id/reply          Replies.Create
-POST    /topics/:id/watch       Topics.Watch
-POST    /topics/:id/unwatch       Topics.UnWatch
-POST    /topics/:id/star       Topics.Star
-POST    /topics/:id/unstar       Topics.UnStar
-POST    /topics/:id/rank         Topics.Rank
-
-GET     /replies/:id/edit          Replies.Edit
-POST    /replies/:id          Replies.Update
-POST    /replies/:id/delete          Replies.Delete
-
-GET     /notifications            Notifications.Index
-POST    /notifications/clear      Notifications.Clear
-
-GET     /captcha                  App.Captcha
-
-GET     /:login             Users.Show
-GET     /:login/topics      Users.Topics
+# 二级路径
+GET     /bbs/				Home.Index
+WS      /bbs/msg                      Home.Message
+GET     /bbs/search         Home.Search
+#/bbs
+GET     /bbs/signup 			Accounts.New
+POST   	/bbs/signup 			Accounts.Create
+GET     /bbs/signin 			Accounts.Login
+POST    /bbs/signin			Accounts.LoginCreate
+POST    /bbs/signout         Accounts.Logout
+GET     /bbs/account/edit     Accounts.Edit
+POST    /bbs/account          Accounts.Update
+GET     /bbs/account/password     Accounts.Password
+POST    /bbs/account/password/update     Accounts.UpdatePassword
+#/bbs
+GET     /bbs/topics           Topics.Index
+GET     /bbs/topics/feed           Topics.Feed
+GET     /bbs/topics/node/:node_id      Topics.Index("node")
+GET     /bbs/topics/popular           Topics.Index("popular")
+GET     /bbs/topics/recent           Topics.Index("recent")
+#/bbs
+GET     /bbs/topics/new       Topics.New
+GET     /bbs/topics/:id       Topics.Show
+GET     /bbs/topics/:id/edit       Topics.Edit
+POST    /bbs/topics/:id       Topics.Update
+POST    /bbs/topics           Topics.Create
+POST    /bbs/topics/:id/delete       Topics.Delete
+POST    /bbs/topics/:id/reply          Replies.Create
+POST    /bbs/topics/:id/watch       Topics.Watch
+POST    /bbs/topics/:id/unwatch       Topics.UnWatch
+POST    /bbs/topics/:id/star       Topics.Star
+POST    /bbs/topics/:id/unstar       Topics.UnStar
+POST    /bbs/topics/:id/rank         Topics.Rank
+#/bbs
+GET     /bbs/replies/:id/edit          Replies.Edit
+POST    /bbs/replies/:id          Replies.Update
+POST    /bbs/replies/:id/delete          Replies.Delete
+#/bbs
+GET     /bbs/notifications            Notifications.Index
+POST    /bbs/notifications/clear      Notifications.Clear
+#/bbs
+GET     /bbs/captcha                  App.Captcha
+#/bbs
+GET     /bbs/:login             Users.Show
+GET     /bbs/:login/topics      Users.Topics
 
 
 

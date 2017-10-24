@@ -42,6 +42,7 @@ func (c *App) Before() revel.Result {
 	c.ViewArgs["controller_name"] = inflections.Underscore(c.Name)
 	c.ViewArgs["method_name"] = inflections.Underscore(c.MethodName)
 	c.ViewArgs["route_name"] = fmt.Sprintf("%v#%v", inflections.Underscore(c.Name), inflections.Underscore(c.MethodName))
+	c.ViewArgs["app_path"] = "/bbs"
 	return c.Result
 }
 
@@ -58,6 +59,7 @@ func (c *App) After() revel.Result {
 }
 
 func (c *App) prependcurrentUser() {
+
 	userID := c.Session["user_id"]
 	u := &User{}
 	c.currentUser = u

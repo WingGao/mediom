@@ -1,0 +1,3 @@
+[submodule "vendor/github.com/huacnlee/train"]
+	path = vendor/github.com/huacnlee/train
+    url=git@github.com:huacnlee/train.git
