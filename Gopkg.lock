@@ -2,6 +2,12 @@
 
 
 [[projects]]
+  name = "cloud.google.com/go"
+  packages = ["compute/metadata"]
+  revision = "eaddaf6dd7ee35fd3c2420c8d27478db176b0485"
+  version = "v0.15.0"
+
+[[projects]]
   branch = "master"
   name = "github.com/acsellers/inflections"
   packages = ["."]
@@ -26,8 +32,44 @@
   revision = "6a29415a8364ec2971fdc62d9e415ed53fc20410"
 
 [[projects]]
+  branch = "master"
+  name = "github.com/denisenkom/go-mssqldb"
+  packages = ["."]
+  revision = "88555645b640cc621e32f8693d7586a1aa1575f4"
+
+[[projects]]
+  name = "github.com/disintegration/imaging"
+  packages = ["."]
+  revision = "b085d8f4ea6f229d5fe9c273aa008c3e39b4e324"
+  version = "v1.2.3"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/erikstmartin/go-testdb"
+  packages = ["."]
+  revision = "8d10e4a1bae52cd8b81ffdec3445890d6dccab3d"
+
+[[projects]]
+  name = "github.com/fatih/color"
+  packages = ["."]
+  revision = "570b54cabe6b8eb0bc2dfce68d964677d63b5260"
+  version = "v1.5.0"
+
+[[projects]]
+  name = "github.com/flosch/pongo2"
+  packages = ["."]
+  revision = "5e81b817a0c48c1c57cdf1a9056cf76bdee02ca9"
+  version = "v3.0"
+
+[[projects]]
+  name = "github.com/fsnotify/fsnotify"
+  packages = ["."]
+  revision = "629574ca2a5df945712d3079857300b5e4da0236"
+  version = "v1.4.2"
+
+[[projects]]
   name = "github.com/garyburd/redigo"
-  packages = ["internal","redis"]
+  packages = ["internal","internal/redistest","redis","redisx"]
   revision = "433969511232c397de61b1442f9fd49ec06ae9ba"
   version = "v1.1.0"
 
@@ -38,6 +80,12 @@
   version = "v1.3"
 
 [[projects]]
+  branch = "master"
+  name = "github.com/golang/protobuf"
+  packages = ["proto"]
+  revision = "1643683e1b54a9e88ad26d98f81400c8c9d9f4f9"
+
+[[projects]]
   name = "github.com/huacnlee/timeago"
   packages = ["."]
   revision = "8fe7d8c51037b7676689e19b9590dee8242aab4e"
@@ -46,12 +94,12 @@
 [[projects]]
   branch = "master"
   name = "github.com/huacnlee/train"
-  packages = [".","interpreter"]
+  packages = [".","command","interpreter"]
   revision = "7b531627995e6a10638db894af30e076cd2fa603"
 
 [[projects]]
   name = "github.com/jinzhu/gorm"
-  packages = ["."]
+  packages = [".","dialects/mssql","dialects/mysql","dialects/postgres","dialects/sqlite"]
   revision = "5174cc5c242a728b435ea2be8a2f7f998e15429b"
   version = "v1.0"
 
@@ -69,7 +117,7 @@
 
 [[projects]]
   name = "github.com/klauspost/compress"
-  packages = ["flate","gzip","zlib"]
+  packages = ["flate","gzip","zip","zlib"]
   revision = "6c8db69c4b49dd4df1fff66996cf556176d0b9bf"
   version = "v1.2.1"
 
@@ -92,10 +140,40 @@
   revision = "cfb55aafdaf3ec08f0db22699ab822c50091b1c4"
 
 [[projects]]
+  name = "github.com/kr/pty"
+  packages = ["."]
+  revision = "95d05c1eef33a45bd58676b6ce28d105839b8d0b"
+  version = "v1.0.1"
+
+[[projects]]
   branch = "master"
   name = "github.com/kr/text"
-  packages = ["."]
+  packages = [".","colwriter"]
   revision = "7cafcd837844e784b526369c9bce262804aebc60"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/lib/pq"
+  packages = [".","hstore","oid"]
+  revision = "b609790bd85edf8e9ab7e0f8912750a786177bcf"
+
+[[projects]]
+  name = "github.com/mattn/go-colorable"
+  packages = ["."]
+  revision = "167de6bfdfba052fa6b2d3664c8f5272e23c9072"
+  version = "v0.0.9"
+
+[[projects]]
+  name = "github.com/mattn/go-isatty"
+  packages = ["."]
+  revision = "0360b2af4f38e8d38c7fce2a9f4e702702d73a39"
+  version = "v0.0.3"
+
+[[projects]]
+  name = "github.com/mattn/go-sqlite3"
+  packages = ["."]
+  revision = "5160b48509cf5c877bc22c11c373f8c7738cdb38"
+  version = "v1.3.0"
 
 [[projects]]
   branch = "master"
@@ -110,6 +188,18 @@
   version = "v1.0"
 
 [[projects]]
+  name = "github.com/qor/l10n"
+  packages = ["."]
+  revision = "19f40df87552bf480558ca008afd2e2f3e18af02"
+  version = "v1.0"
+
+[[projects]]
+  name = "github.com/qor/media_library"
+  packages = ["."]
+  revision = "1d6df1beadc61cbf5eb2df84b7631e499db668a5"
+  version = "v1.0"
+
+[[projects]]
   name = "github.com/qor/publish"
   packages = ["."]
   revision = "e32525becf49626c73fdca1a4aa3c39ffde86a2d"
@@ -117,7 +207,7 @@
 
 [[projects]]
   name = "github.com/qor/qor"
-  packages = [".","resource","utils"]
+  packages = [".","resource","test/utils","utils"]
   revision = "d1402d1caffb8f9c05d73fa5bfaae2853c4191fb"
   version = "v1.0"
 
@@ -131,6 +221,12 @@
   name = "github.com/qor/roles"
   packages = ["."]
   revision = "f1e05694734518c0ce2dc21151e0ecfccf4db8f4"
+  version = "v1.0"
+
+[[projects]]
+  name = "github.com/qor/serializable_meta"
+  packages = ["."]
+  revision = "eea3296fff71c33e725e92a40e0badb65c3876eb"
   version = "v1.0"
 
 [[projects]]
@@ -152,8 +248,14 @@
   version = "v0.17"
 
 [[projects]]
+  name = "github.com/revel/cron"
+  packages = ["."]
+  revision = "483223747f6b728cfe1b327fe05b2fa4dd456b27"
+  version = "v1"
+
+[[projects]]
   name = "github.com/revel/modules"
-  packages = ["static/app/controllers","testrunner/app","testrunner/app/controllers"]
+  packages = ["auth","auth/driver/secret","jobs/app/jobs","static/app/controllers","testrunner/app","testrunner/app/controllers"]
   revision = "8c55c9a970cf5062eeb0368e809d6f27cffc28b0"
   version = "v0.17"
 
@@ -183,6 +285,12 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/shaoshing/gotest"
+  packages = ["."]
+  revision = "9301b15eda78bec810b41f631ba48e898e0ee30e"
+
+[[projects]]
+  branch = "master"
   name = "github.com/shurcooL/sanitized_anchor_name"
   packages = ["."]
   revision = "86672fcb3f950f35f2e675df2240550f2a50762f"
@@ -190,7 +298,7 @@
 [[projects]]
   branch = "master"
   name = "github.com/theplant/cldr"
-  packages = ["."]
+  packages = [".","resources/locales","resources/locales/af","resources/locales/af_NA","resources/locales/agq","resources/locales/ak","resources/locales/am","resources/locales/ar","resources/locales/ar_AE","resources/locales/ar_DJ","resources/locales/ar_DZ","resources/locales/ar_EH","resources/locales/ar_ER","resources/locales/ar_LB","resources/locales/ar_LY","resources/locales/ar_MA","resources/locales/ar_MR","resources/locales/ar_SO","resources/locales/ar_SS","resources/locales/ar_TN","resources/locales/as","resources/locales/asa","resources/locales/ast","resources/locales/az","resources/locales/az_Cyrl","resources/locales/bas","resources/locales/be","resources/locales/bem","resources/locales/bez","resources/locales/bg","resources/locales/bm","resources/locales/bn","resources/locales/bo","resources/locales/bo_IN","resources/locales/br","resources/locales/brx","resources/locales/bs","resources/locales/bs_Cyrl","resources/locales/ca","resources/locales/ca_ES_VALENCIA","resources/locales/ca_FR","resources/locales/cgg","resources/locales/chr","resources/locales/cs","resources/locales/cy","resources/locales/da","resources/locales/dav","resources/locales/de","resources/locales/de_AT","resources/locales/de_CH","resources/locales/de_LI","resources/locales/de_LU","resources/locales/dje","resources/locales/dsb","resources/locales/dua","resources/locales/dyo","resources/locales/dz","resources/locales/ebu","resources/locales/ee","resources/locales/el","resources/locales/en","resources/locales/en_001","resources/locales/en_150","resources/locales/en_AG","resources/locales/en_AI","resources/locales/en_AU","resources/locales/en_BB","resources/locales/en_BE","resources/locales/en_BM","resources/locales/en_BS","resources/locales/en_BW","resources/locales/en_BZ","resources/locales/en_CA","resources/locales/en_CC","resources/locales/en_CK","resources/locales/en_CX","resources/locales/en_DM","resources/locales/en_ER","resources/locales/en_FJ","resources/locales/en_FK","resources/locales/en_GB","resources/locales/en_GD","resources/locales/en_GH","resources/locales/en_GI","resources/locales/en_GM","resources/locales/en_GY","resources/locales/en_IN","resources/locales/en_JM","resources/locales/en_KE","resources/locales/en_KI","resources/locales/en_KN","resources/locales/en_KY","resources/locales/en_LC","resources/locales/en_LR","resources/locales/en_LS","resources/locales/en_MG","resources/locales/en_MO","resources/locales/en_MS","resources/locales/en_MT","resources/locales/en_MU","resources/locales/en_MW","resources/locales/en_MY","resources/locales/en_NA","resources/locales/en_NF","resources/locales/en_NG","resources/locales/en_NR","resources/locales/en_NU","resources/locales/en_NZ","resources/locales/en_PG","resources/locales/en_PH","resources/locales/en_PK","resources/locales/en_PN","resources/locales/en_RW","resources/locales/en_SB","resources/locales/en_SC","resources/locales/en_SG","resources/locales/en_SH","resources/locales/en_SL","resources/locales/en_SS","resources/locales/en_SX","resources/locales/en_SZ","resources/locales/en_TK","resources/locales/en_TO","resources/locales/en_TT","resources/locales/en_TV","resources/locales/en_TZ","resources/locales/en_UG","resources/locales/en_US_POSIX","resources/locales/en_VC","resources/locales/en_VU","resources/locales/en_WS","resources/locales/en_ZA","resources/locales/en_ZM","resources/locales/eo","resources/locales/es","resources/locales/es_419","resources/locales/es_AR","resources/locales/es_BO","resources/locales/es_CL","resources/locales/es_CO","resources/locales/es_CR","resources/locales/es_CU","resources/locales/es_DO","resources/locales/es_EC","resources/locales/es_GQ","resources/locales/es_GT","resources/locales/es_HN","resources/locales/es_MX","resources/locales/es_NI","resources/locales/es_PA","resources/locales/es_PE","resources/locales/es_PH","resources/locales/es_PR","resources/locales/es_PY","resources/locales/es_SV","resources/locales/es_US","resources/locales/es_UY","resources/locales/es_VE","resources/locales/et","resources/locales/eu","resources/locales/ewo","resources/locales/fa","resources/locales/fa_AF","resources/locales/ff","resources/locales/ff_GN","resources/locales/ff_MR","resources/locales/fi","resources/locales/fil","resources/locales/fo","resources/locales/fr","resources/locales/fr_BE","resources/locales/fr_BI","resources/locales/fr_CA","resources/locales/fr_CD","resources/locales/fr_CH","resources/locales/fr_DJ","resources/locales/fr_DZ","resources/locales/fr_GN","resources/locales/fr_HT","resources/locales/fr_KM","resources/locales/fr_LU","resources/locales/fr_MG","resources/locales/fr_MR","resources/locales/fr_MU","resources/locales/fr_RW","resources/locales/fr_SC","resources/locales/fr_SY","resources/locales/fr_TN","resources/locales/fr_VU","resources/locales/fur","resources/locales/fy","resources/locales/ga","resources/locales/gd","resources/locales/gl","resources/locales/gsw","resources/locales/gu","resources/locales/guz","resources/locales/gv","resources/locales/ha","resources/locales/ha_Latn_GH","resources/locales/haw","resources/locales/he","resources/locales/hi","resources/locales/hr","resources/locales/hr_BA","resources/locales/hsb","resources/locales/hu","resources/locales/hy","resources/locales/id","resources/locales/ig","resources/locales/ii","resources/locales/is","resources/locales/it","resources/locales/it_CH","resources/locales/ja","resources/locales/jgo","resources/locales/jmc","resources/locales/ka","resources/locales/kab","resources/locales/kam","resources/locales/kde","resources/locales/kea","resources/locales/khq","resources/locales/ki","resources/locales/kk","resources/locales/kkj","resources/locales/kl","resources/locales/kln","resources/locales/km","resources/locales/kn","resources/locales/ko","resources/locales/kok","resources/locales/ks","resources/locales/ksb","resources/locales/ksf","resources/locales/ksh","resources/locales/kw","resources/locales/ky","resources/locales/lag","resources/locales/lb","resources/locales/lg","resources/locales/lkt","resources/locales/ln","resources/locales/ln_AO","resources/locales/lo","resources/locales/lt","resources/locales/lu","resources/locales/luo","resources/locales/luy","resources/locales/lv","resources/locales/mas","resources/locales/mas_TZ","resources/locales/mer","resources/locales/mfe","resources/locales/mg","resources/locales/mgh","resources/locales/mgo","resources/locales/mk","resources/locales/ml","resources/locales/mn","resources/locales/mr","resources/locales/ms","resources/locales/ms_Latn_BN","resources/locales/ms_Latn_SG","resources/locales/mt","resources/locales/mua","resources/locales/my","resources/locales/naq","resources/locales/nb","resources/locales/nd","resources/locales/ne","resources/locales/nl","resources/locales/nl_AW","resources/locales/nl_BE","resources/locales/nl_BQ","resources/locales/nl_CW","resources/locales/nl_SR","resources/locales/nl_SX","resources/locales/nmg","resources/locales/nn","resources/locales/nnh","resources/locales/nus","resources/locales/nyn","resources/locales/om","resources/locales/om_KE","resources/locales/or","resources/locales/os","resources/locales/os_RU","resources/locales/pa","resources/locales/pa_Arab","resources/locales/pl","resources/locales/ps","resources/locales/pt","resources/locales/pt_AO","resources/locales/pt_CV","resources/locales/pt_MO","resources/locales/pt_MZ","resources/locales/pt_PT","resources/locales/pt_ST","resources/locales/qu","resources/locales/qu_BO","resources/locales/qu_EC","resources/locales/rm","resources/locales/rn","resources/locales/ro","resources/locales/ro_MD","resources/locales/rof","resources/locales/root","resources/locales/ru","resources/locales/ru_BY","resources/locales/ru_KG","resources/locales/ru_KZ","resources/locales/ru_MD","resources/locales/rw","resources/locales/rwk","resources/locales/sah","resources/locales/saq","resources/locales/sbp","resources/locales/se","resources/locales/se_SE","resources/locales/seh","resources/locales/ses","resources/locales/sg","resources/locales/shi","resources/locales/shi_Latn","resources/locales/si","resources/locales/sk","resources/locales/sl","resources/locales/smn","resources/locales/sn","resources/locales/so","resources/locales/so_DJ","resources/locales/so_ET","resources/locales/so_KE","resources/locales/sq","resources/locales/sq_MK","resources/locales/sr","resources/locales/sr_Latn","resources/locales/sv","resources/locales/sw","resources/locales/sw_CD","resources/locales/sw_UG","resources/locales/ta","resources/locales/ta_LK","resources/locales/ta_MY","resources/locales/ta_SG","resources/locales/te","resources/locales/teo","resources/locales/teo_KE","resources/locales/th","resources/locales/ti","resources/locales/ti_ER","resources/locales/to","resources/locales/tr","resources/locales/twq","resources/locales/tzm","resources/locales/ug","resources/locales/uk","resources/locales/ur","resources/locales/ur_IN","resources/locales/uz","resources/locales/uz_Arab","resources/locales/uz_Cyrl","resources/locales/vai","resources/locales/vai_Latn","resources/locales/vi","resources/locales/vun","resources/locales/wae","resources/locales/xog","resources/locales/yav","resources/locales/yi","resources/locales/yo","resources/locales/yo_BJ","resources/locales/zgh","resources/locales/zh","resources/locales/zh_Hans_HK","resources/locales/zh_Hans_MO","resources/locales/zh_Hans_SG","resources/locales/zh_Hant","resources/locales/zh_Hant_HK","resources/locales/zh_Hant_MO","resources/locales/zu"]
   revision = "b97a4c2a76cf8ba21d1cb8ed2f4c8ee103371e2d"
 
 [[projects]]
@@ -201,21 +309,81 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/tylerb/gls"
+  packages = ["."]
+  revision = "e606233f194d6c314156dc6a35f21a42a470c6f6"
+
+[[projects]]
+  name = "github.com/yosssi/ace"
+  packages = ["."]
+  revision = "ea038f4770b6746c3f8f84f14fa60d9fe1205b56"
+  version = "v0.0.5"
+
+[[projects]]
+  branch = "master"
+  name = "go4.org"
+  packages = ["syncutil/singleflight"]
+  revision = "034d17a462f7b2dcd1a4a73553ec5357ff6e6c6e"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/crypto"
+  packages = ["acme","acme/autocert","bcrypt","blowfish","md4","ssh/terminal"]
+  revision = "2509b142fb2b797aa7587dad548f113b2c0f20ce"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/image"
+  packages = ["bmp","tiff","tiff/lzw"]
+  revision = "f7e31b4ea2e3413ab91b4e7d2dc83e5f8d19a44c"
+
+[[projects]]
+  branch = "master"
   name = "golang.org/x/net"
-  packages = ["html","html/atom","websocket"]
+  packages = ["bpf","context","context/ctxhttp","dns/dnsmessage","html","html/atom","http2","http2/hpack","icmp","idna","internal/iana","internal/nettest","internal/socket","internal/timeseries","ipv4","ipv6","lex/httplex","webdav","webdav/internal/xml","websocket"]
   revision = "0a9397675ba34b2845f758fe3cd68828369c6517"
 
 [[projects]]
   branch = "master"
+  name = "golang.org/x/oauth2"
+  packages = [".","google","internal","jws","jwt"]
+  revision = "bb50c06baba3d0c76f9d125c0719093e315b5b44"
+
+[[projects]]
+  branch = "master"
   name = "golang.org/x/sys"
-  packages = ["unix"]
+  packages = ["plan9","unix","windows","windows/registry","windows/svc","windows/svc/debug","windows/svc/eventlog","windows/svc/mgr"]
   revision = "314a259e304ff91bd6985da2a7149bbf91237993"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/text"
-  packages = ["internal/gen","unicode/cldr"]
+  packages = ["cases","collate","collate/build","currency","encoding","encoding/charmap","encoding/htmlindex","encoding/ianaindex","encoding/internal","encoding/internal/enctest","encoding/internal/identifier","encoding/japanese","encoding/korean","encoding/simplifiedchinese","encoding/traditionalchinese","encoding/unicode","feature/plural","internal","internal/catmsg","internal/colltab","internal/export/idna","internal/format","internal/gen","internal/number","internal/stringset","internal/tag","internal/testtext","internal/triegen","internal/ucd","internal/utf8internal","language","language/display","message","message/catalog","number","runes","secure/bidirule","transform","unicode/bidi","unicode/cldr","unicode/norm","unicode/rangetable","unicode/runenames","width"]
   revision = "1cbadb444a806fd9430d14ad08967ed91da4fa0a"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/tools"
+  packages = ["go/ast/astutil","go/buildutil","go/loader"]
+  revision = "9bd2f442688b66c5289262d70f537c2ecf81d7de"
+
+[[projects]]
+  branch = "master"
+  name = "google.golang.org/api"
+  packages = ["compute/v1","gensupport","googleapi","googleapi/internal/uritemplates"]
+  revision = "0bf971c28aa2a58853c3ea0a9bc60c9b3761234a"
+
+[[projects]]
+  name = "google.golang.org/appengine"
+  packages = [".","internal","internal/app_identity","internal/base","internal/datastore","internal/log","internal/modules","internal/remote_api","internal/urlfetch","urlfetch"]
+  revision = "150dc57a1b433e64154302bdc40b6bb8aefa313a"
+  version = "v1.0.0"
+
+[[projects]]
+  branch = "v1"
+  name = "gopkg.in/check.v1"
+  packages = ["."]
+  revision = "20d25e2804050c1cd24a7eea1e7a6447dd0e74ec"
 
 [[projects]]
   name = "gopkg.in/fsnotify.v1"
@@ -232,6 +400,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "42171641474eb08316d7c5e86357aace93c59b83630810e2c221eb7f3ff34154"
+  inputs-digest = "c7e57802d144dd16203fb121894deac8cb959641c5ec064a0e897d969a7de210"
   solver-name = "gps-cdcl"
   solver-version = 1
