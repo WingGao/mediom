@@ -9,6 +9,8 @@ import (
 	"github.com/revel/revel"
 	"reflect"
 	"strings"
+	"github.com/parnurzeal/gorequest"
+	"github.com/json-iterator/go"
 )
 
 // App base controller
@@ -58,12 +60,41 @@ func (c *App) After() revel.Result {
 	return c.Result
 }
 
+func (c *App) getUserFromMain() bool {
+	request := gorequest.New()
+	cookie, err := c.Request.Cookie("smsid")
+	if err != nil {
+		return false
+	}
+	url := fmt.Sprintf("http://%s/api/user/auth?token=wing.token&sid=%s", "127.0.0.1:7031", cookie.Value)
+	//resp, body, errs := request.Get(url).End()
+	_, body, errs := request.Get(url).End()
+	if len(errs) > 0 {
+		return false
+	}
+	bs := []byte(body)
+	jsoniter.Get(bs, "")
+	u := &User{
+		Login: jsoniter.Get(bs, "Nickname").ToString(),
+		Group: jsoniter.Get(bs, "Group").ToUint32(),
+	}
+	u.Id = jsoniter.Get(bs, "ID").ToInt32()
+	if u.Id <= 0 {
+		return false
+	}
+	DB.Where("id = ?", u.Id).FirstOrCreate(u)
+	c.storeUser(u)
+	c.currentUser = u
+	fmt.Println("getUserFromMain")
+	return true
+}
 func (c *App) prependcurrentUser() {
-
 	userID := c.Session["user_id"]
+	fmt.Println("prependcurrentUser", userID)
 	u := &User{}
 	c.currentUser = u
 	if len(userID) == 0 {
+		c.getUserFromMain()
 		return
 	}
 
@@ -83,7 +114,8 @@ func (c App) clearUser() {
 }
 
 func (c *App) isLogined() bool {
-	return c.currentUser.Id > 0
+	fmt.Println("isLogined", c.currentUser)
+	return c.currentUser != nil && c.currentUser.Id > 0
 }
 
 func (c *App) requireUser() {

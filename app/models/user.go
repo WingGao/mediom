@@ -10,7 +10,7 @@ import (
 	"time"
 )
 
-var ADMIN_LOGINS = []string{"huacnlee"}
+var ADMIN_LOGINS = []string{""}
 
 type User struct {
 	BaseModel
@@ -28,6 +28,7 @@ type User struct {
 	Replies     []Reply
 	CreatedAt   time.Time
 	UpdatedAt   time.Time
+	Group       uint32
 }
 
 func (u User) BeforeCreate() error {
@@ -49,12 +50,13 @@ func (u User) SameAs(obj interface{}) bool {
 }
 
 func (u User) IsAdmin() bool {
-	for _, str := range ADMIN_LOGINS {
-		if u.Login == str {
-			return true
-		}
-	}
-	return false
+	//for _, str := range ADMIN_LOGINS {
+	//	if u.Login == str {
+	//		return true
+	//	}
+	//}
+	return u.Group == 1
+	//return false
 }
 
 func (u User) UnReadNotificationsCount() (count int) {

@@ -78,6 +78,7 @@ func (c Accounts) LoginCreate() revel.Result {
 }
 
 func (c Accounts) Logout() revel.Result {
+	//TODO 登出
 	c.clearUser()
 	c.Flash.Success("登出成功")
 	return c.Redirect(Home.Index)
