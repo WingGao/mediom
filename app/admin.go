@@ -13,12 +13,16 @@ import (
 	"strings"
 )
 
+const (
+	ADMIN_URL_PREFIX = "/bbs/admin"
+)
+
 var Admin *admin.Admin
 var Publish *publish.Publish
 var mux *http.ServeMux
 
 var AdminFilter = func(c *revel.Controller, fc []revel.Filter) {
-	if strings.HasPrefix(c.Request.URL.Path, "/admin") {
+	if strings.HasPrefix(c.Request.URL.Path, ADMIN_URL_PREFIX) {
 		mux.ServeHTTP(c.Response.Out, c.Request.Request)
 	} else {
 		fc[0](c, fc[1:])
@@ -70,7 +74,7 @@ func initAdmin() {
 
 	mux = http.NewServeMux()
 	mux.Handle("/system/", http.FileServer(http.Dir("public")))
-	Admin.MountTo("/admin", mux)
+	Admin.MountTo(ADMIN_URL_PREFIX, mux)
 }
 
 func nodeCollection(resource interface{}, context *qor.Context) (results [][]string) {

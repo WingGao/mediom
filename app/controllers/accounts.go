@@ -10,10 +10,6 @@ type Accounts struct {
 	App
 }
 
-func init() {
-	revel.InterceptMethod((*Accounts).Before, revel.BEFORE)
-	// revel.InterceptMethod((*Accounts).After, revel.AFTER)
-}
 
 var (
 	regexRequireUserActions, _ = regexp.Compile("Edit|Update|Password|UpdatePassword")

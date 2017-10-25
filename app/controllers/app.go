@@ -23,10 +23,6 @@ const (
 	JSON_CODE_NO_LOGIN = -1
 )
 
-func init() {
-	revel.InterceptMethod((*App).Before, revel.BEFORE)
-	revel.InterceptMethod((*App).After, revel.AFTER)
-}
 
 // Finish request
 func (c *App) Finish(r revel.Result) {
@@ -85,12 +81,12 @@ func (c *App) getUserFromMain() bool {
 	DB.Where("id = ?", u.Id).FirstOrCreate(u)
 	c.storeUser(u)
 	c.currentUser = u
-	fmt.Println("getUserFromMain")
+	//fmt.Println("getUserFromMain")
 	return true
 }
 func (c *App) prependcurrentUser() {
 	userID := c.Session["user_id"]
-	fmt.Println("prependcurrentUser", userID)
+	//fmt.Println("prependcurrentUser", userID)
 	u := &User{}
 	c.currentUser = u
 	if len(userID) == 0 {
@@ -114,11 +110,12 @@ func (c App) clearUser() {
 }
 
 func (c *App) isLogined() bool {
-	fmt.Println("isLogined", c.currentUser)
+	//fmt.Println("isLogined", c.currentUser)
 	return c.currentUser != nil && c.currentUser.Id > 0
 }
 
 func (c *App) requireUser() {
+	//fmt.Println("requireUser")
 	if !c.isLogined() {
 		c.Flash.Error("你还未登录哦")
 		c.Finish(c.Redirect(Accounts.Login))
