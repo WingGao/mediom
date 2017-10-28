@@ -3,9 +3,9 @@
 		<div class="panel-heading">发布新话题</div>
 		<form class="topic-form panel-body"
 		  {{if .topic.NewRecord}}
-		  action="/topics" method="POST"
+		  action="{{.app_path}}/topics" method="POST"
 		  {{else}}
-		  action="/topics/{{.topic.Id}}" method="POST"
+		  action="{{.app_path}}/topics/{{.topic.Id}}" method="POST"
 		  {{end}}
 		 >
 		  {{.validation | error_messages}}

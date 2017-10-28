@@ -3,7 +3,7 @@
 
 <div class="panel panel-default">
 	<div class="panel-heading">修改 {{.setting.Key}}</div>
-	<form action="/settings/{{.setting.Key}}" class="panel-body" method="POST">
+	<form action="{{.app_path}}/settings/{{.setting.Key}}" class="panel-body" method="POST">
 		{{error_messages .validation}}
 		<input type="hidden" name="csrf_token" value="{{.csrf_token}}" />
 		<div class="form-group">
@@ -11,7 +11,7 @@
 		</div>
 		<div class="actions">
 			<button type="submit" class="btn btn-primary">更新</button>
-			<a class="btn btn-default" href="/settings">取消</a>
+			<a class="btn btn-default" href="{{.app_path}}/settings">取消</a>
 		</div>
 	</form>
 </div>

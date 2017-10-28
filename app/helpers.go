@@ -135,7 +135,7 @@ func init() {
 			if n.NewRecord() {
 				return out
 			}
-			out = fmt.Sprintf("<a href='/topics/node/%v' class='node-name'>%v</a>", n.Id, template.HTMLEscapeString(n.Name))
+			out = fmt.Sprintf("<a href='%s/topics/node/%v' class='node-name'>%v</a>", revel.Config.StringDefault("bbs.prefix", ""), n.Id, template.HTMLEscapeString(n.Name))
 		}
 
 		return template.HTML(out)

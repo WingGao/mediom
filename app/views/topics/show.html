@@ -26,7 +26,7 @@
 				<div class="label-awesome">
 				{{awesome_icon_tag .topic}} 此话题已被管理员设置为精华帖！
 				{{if .current_user.IsAdmin}}
-				<a href="/topics/{{.topic.Id}}/rank?v=normal" title="取消精华" class="pull-right" data-confirm="确定要取消精华帖么？" data-method="POST"><i class="fa fa-remove"></i></a>
+				<a href="{{.app_path}}/topics/{{.topic.Id}}/rank?v=normal" title="取消精华" class="pull-right" data-confirm="确定要取消精华帖么？" data-method="POST"><i class="fa fa-remove"></i></a>
 				{{end}}
 				</div>
 			{{end}}
@@ -34,7 +34,7 @@
 				<div class="label-nopoint">
 				此帖已被标记 NoPoint 将不会在列表页面显示，请检查帖子内容是否不符合社区要求。
 				{{if .current_user.IsAdmin}}
-				<a href="/topics/{{.topic.Id}}/rank?v=normal" title="取消" class="pull-right" data-confirm="确定要取消么？" data-method="POST"><i class="fa fa-remove"></i></a>
+				<a href="{{.app_path}}/topics/{{.topic.Id}}/rank?v=normal" title="取消" class="pull-right" data-confirm="确定要取消么？" data-method="POST"><i class="fa fa-remove"></i></a>
 				{{end}}
 				</div>
 			{{end}}
@@ -45,17 +45,17 @@
 					{{share_button .topic.Title .topic.URL}}
 					{{if .current_user.IsAdmin}}
 						{{if .topic.IsNormal}}
-						<a href="/topics/{{.topic.Id}}/rank?v=awesome" title="加精" data-confirm="确定要设置为精华帖么？" data-method="POST"><i class="fa fa-thumbs-o-up"></i> 加精</a>
+						<a href="{{.app_path}}/topics/{{.topic.Id}}/rank?v=awesome" title="加精" data-confirm="确定要设置为精华帖么？" data-method="POST"><i class="fa fa-thumbs-o-up"></i> 加精</a>
 						{{end}}
 						{{if .topic.IsNormal}}
-						<a href="/topics/{{.topic.Id}}/rank?v=nopoint" title="NoPoint" data-confirm="确定要将此帖移动到 NoPoint 节点么？" data-method="POST"><i class="fa fa-thumbs-o-down"></i> 埋贴</a>
+						<a href="{{.app_path}}/topics/{{.topic.Id}}/rank?v=nopoint" title="NoPoint" data-confirm="确定要将此帖移动到 NoPoint 节点么？" data-method="POST"><i class="fa fa-thumbs-o-down"></i> 埋贴</a>
 						{{end}}
 					{{end}}
 				</span>
 				{{if is_owner .current_user .topic}}
 				<span class="pull-right opts">
-		     	<a href="/topics/{{.topic.Id}}/edit"><i class="fa fa-pencil"></i></a>
-					<a href="/topics/{{.topic.Id}}/delete" data-confirm="确定要删除吗？" data-method="post"><i class="fa fa-trash-o"></i></a>
+		     	<a href="{{.app_path}}/topics/{{.topic.Id}}/edit"><i class="fa fa-pencil"></i></a>
+					<a href="{{.app_path}}/topics/{{.topic.Id}}/delete" data-confirm="确定要删除吗？" data-method="post"><i class="fa fa-trash-o"></i></a>
 				</span>
 				{{end}}
 			</div>

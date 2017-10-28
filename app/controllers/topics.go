@@ -62,7 +62,7 @@ func (c Topics) Create() revel.Result {
 		c.ViewArgs["nodes"] = FindAllNodes()
 		return c.renderValidation("topics/new.html", v)
 	}
-	return c.Redirect(fmt.Sprintf("/topics/%v", t.Id))
+	return c.Redirect(fmt.Sprintf("%s/topics/%v", revel.Config.StringDefault("bbs.prefix", ""), t.Id))
 }
 
 func (c Topics) Show() revel.Result {
@@ -81,7 +81,7 @@ func (c Topics) Edit() revel.Result {
 	DB.Where("id = ?", c.Params.Get("id")).First(t)
 	if !c.isOwner(t) {
 		c.Flash.Error("没有修改的权限")
-		return c.Redirect("/")
+		return c.Redirect(fmt.Sprintf("%s/", revel.Config.StringDefault("bbs.prefix", "")))
 	}
 	c.ViewArgs["topic"] = t
 	c.ViewArgs["nodes"] = FindAllNodes()
@@ -106,7 +106,7 @@ func (c Topics) Update() revel.Result {
 		c.ViewArgs["nodes"] = FindAllNodes()
 		return c.renderValidation("topics/edit.html", v)
 	}
-	return c.Redirect(fmt.Sprintf("/topics/%v", t.Id))
+	return c.Redirect(fmt.Sprintf("%s/topics/%v", revel.Config.StringDefault("bbs.prefix", ""), t.Id))
 }
 
 func (c Topics) Delete() revel.Result {
@@ -122,7 +122,7 @@ func (c Topics) Delete() revel.Result {
 	if err != nil {
 		c.RenderError(err)
 	}
-	return c.Redirect("/topics")
+	return c.Redirect(fmt.Sprintf("%s/topics", revel.Config.StringDefault("bbs.prefix", "")))
 }
 
 func (c Topics) Watch() revel.Result {
@@ -176,5 +176,5 @@ func (c Topics) Rank() revel.Result {
 	if err != nil {
 		return c.RenderError(err)
 	}
-	return c.Redirect(fmt.Sprintf("/topics/%v", t.Id))
+	return c.Redirect(fmt.Sprintf("%s/topics/%v", revel.Config.StringDefault("bbs.prefix", ""), t.Id))
 }

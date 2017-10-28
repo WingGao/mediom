@@ -3,7 +3,7 @@
 
 <div class="panel panel-default">
 	<div class="panel-heading">修改</div>
-	<form action="/nodes/{{.node.Id}}" class="panel-body" method="POST">
+	<form action="{{.app_path}}/nodes/{{.node.Id}}" class="panel-body" method="POST">
 		{{.validation | error_messages}}
 		<input type="hidden" name="csrf_token" value="{{.csrf_token}}" />
 		<div class="form-group">
@@ -17,7 +17,7 @@
 		</div>
 		<div class="actions">
 			<button type="submit" class="btn btn-primary">更新</button>
-			<a class="btn btn-default" href="/nodes">取消</a>
+			<a class="btn btn-default" href="{{.app_path}}/nodes">取消</a>
 		</div>
 	</form>
 </div>

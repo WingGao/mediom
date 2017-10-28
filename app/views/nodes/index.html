@@ -3,7 +3,7 @@
 
 <div class="panel panel-default">
 	<div class="panel-heading">创建节点</div>
-	<form action="/nodes" class="panel-body form-inline" method="POST">
+	<form action="{{.app_path}}/nodes" class="panel-body form-inline" method="POST">
 		{{.validation | error_messages}}
 		<input type="hidden" name="csrf_token" value="{{.csrf_token}}" />
 		<div class="form-group">
@@ -21,8 +21,8 @@
 	<li class="list-group-item">
 		<span>{{.Name}}</span>
 		<span class="opts pull-right">
-			<a href="/nodes/{{.Id}}/edit"><i class="fa fa-pencil"></i></a>
-			<a href="/nodes/{{.Id}}/delete" data-confirm="确定要删除吗？" data-method="post"><i class="fa fa-trash-o"></i></a>
+			<a href="{{.app_path}}/nodes/{{.Id}}/edit"><i class="fa fa-pencil"></i></a>
+			<a href="{{.app_path}}/nodes/{{.Id}}/delete" data-confirm="确定要删除吗？" data-method="post"><i class="fa fa-trash-o"></i></a>
 		</span>
 	</li>
 {{end}}

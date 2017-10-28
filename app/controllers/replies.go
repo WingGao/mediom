@@ -26,9 +26,9 @@ func (c Replies) Create() revel.Result {
 	v := CreateReply(reply)
 	if v.HasErrors() {
 		c.Flash.Error("回帖失败")
-		return c.Redirect(fmt.Sprintf("/topics/%v", c.topic.Id))
+		return c.Redirect(fmt.Sprintf("%s/topics/%v", revel.Config.StringDefault("bbs.prefix", ""), c.topic.Id))
 	}
-	return c.Redirect(fmt.Sprintf("/topics/%v#reply%v", c.topic.Id, c.topic.RepliesCount))
+	return c.Redirect(fmt.Sprintf("%s/topics/%v#reply%v", revel.Config.StringDefault("bbs.prefix", ""), c.topic.Id, c.topic.RepliesCount))
 }
 
 func (c Replies) Update() revel.Result {
@@ -46,7 +46,7 @@ func (c Replies) Update() revel.Result {
 	if err != nil {
 		return c.RenderError(err)
 	}
-	return c.Redirect(fmt.Sprintf("/topics/%v", reply.TopicId))
+	return c.Redirect(fmt.Sprintf("%s/topics/%v",revel.Config.StringDefault("bbs.prefix", ""), reply.TopicId))
 }
 
 func (c Replies) Edit() revel.Result {
@@ -76,5 +76,5 @@ func (c Replies) Delete() revel.Result {
 
 	DB.Delete(&reply)
 	c.Flash.Success("回帖删除成功")
-	return c.Redirect(fmt.Sprintf("/topics/%v", reply.TopicId))
+	return c.Redirect(fmt.Sprintf("%s/topics/%v",revel.Config.StringDefault("bbs.prefix", ""), reply.TopicId))
 }

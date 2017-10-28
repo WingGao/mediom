@@ -4,7 +4,7 @@
 <div class="col-md-8 col-md-offset-2">
 	<div class="panel panel-default">
 		<div class="panel-heading">修改回帖内容</div>
-		<form class="reply-form panel-body" action="/replies/{{.reply.Id}}" method="POST">
+		<form class="reply-form panel-body" action="{{.app_path}}/replies/{{.reply.Id}}" method="POST">
 		  {{.validation | error_messages}}
 		  <input type="hidden" name="csrf_token" value="{{.csrf_token}}" />
 		  <div class="form-group">
@@ -12,7 +12,7 @@
 		  </div>
 			<div class="actions">
 		  		<button type="submit" class="btn btn-primary">提交修改</button>
-          <a class="btn btn-default" href="/topics/{{.reply.TopicId}}">取消</a>
+          <a class="btn btn-default" href="{{.app_path}}/topics/{{.reply.TopicId}}">取消</a>
 			</div>
 		</form>
 	</div>

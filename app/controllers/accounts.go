@@ -4,12 +4,12 @@ import (
 	. "github.com/huacnlee/mediom/app/models"
 	"github.com/revel/revel"
 	"regexp"
+	"fmt"
 )
 
 type Accounts struct {
 	App
 }
-
 
 var (
 	regexRequireUserActions, _ = regexp.Compile("Edit|Update|Password|UpdatePassword")
@@ -98,7 +98,7 @@ func (c Accounts) Update() revel.Result {
 		return c.renderValidation("accounts/edit.html", v)
 	}
 	c.Flash.Success("个人信息修改成功")
-	return c.Redirect("/account/edit")
+	return c.Redirect(fmt.Sprintf("%s/account/edit", revel.Config.StringDefault("bbs.prefix", "")))
 }
 
 func (c Accounts) Password() revel.Result {
@@ -111,5 +111,5 @@ func (c Accounts) UpdatePassword() revel.Result {
 		return c.renderValidation("accounts/password.html", v)
 	}
 	c.Flash.Success("密码修改成功")
-	return c.Redirect("/account/password")
+	return c.Redirect(fmt.Sprintf("%s/account/password", revel.Config.StringDefault("bbs.prefix", "")))
 }

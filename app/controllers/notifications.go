@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"github.com/revel/revel"
+	"fmt"
 )
 
 type Notifications struct {
@@ -28,5 +29,5 @@ func (c Notifications) Clear() revel.Result {
 	c.requireUser()
 
 	c.currentUser.ClearNotifications()
-	return c.Redirect("/notifications")
+	return c.Redirect(fmt.Sprintf("%s/notifications", revel.Config.StringDefault("bbs.prefix", "")))
 }

@@ -1,7 +1,7 @@
 <div id="reply" class="panel panel-default">
 	<div class="panel-heading">回帖</div>
 	<form class="reply-form panel-body"
-	  action="/topics/{{.topic.Id}}/reply" method="POST"
+	  action="{{.app_path}}/topics/{{.topic.Id}}/reply" method="POST"
 	 >
 	  {{.validation | error_messages}}
 	  <input type="hidden" name="csrf_token" value="{{.csrf_token}}" />

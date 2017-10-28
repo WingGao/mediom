@@ -8,7 +8,7 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">个人设置</div>
 			<div class="panel-body">
-				<form class="signup" action="/account" method="POST">
+				<form class="signup" action="{{.app_path}}/account" method="POST">
 					{{.validation | error_messages}}
 					<input type="hidden" name="csrf_token" value="{{.csrf_token}}" />
 					<div class="form-group">
