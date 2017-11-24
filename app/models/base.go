@@ -7,6 +7,7 @@ import (
 	"log"
 	"os"
 	"time"
+	"github.com/WingGao/go-utils"
 )
 
 var db *gorm.DB
@@ -32,7 +33,7 @@ func (m BaseModel) IsDeleted() bool {
 
 func InitDatabase() {
 	adapter := revel.Config.StringDefault("gorm.adapter", "mysql")
-	databaseURI := revel.Config.StringDefault("gorm.database_uri", "")
+	databaseURI := utils.DefaultConfig.GetString("bbs_mysql", "")
 	var err error
 	db, err = gorm.Open(adapter, databaseURI)
 	DB = db

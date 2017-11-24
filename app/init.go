@@ -6,9 +6,20 @@ import (
 	"github.com/huacnlee/train"
 	"github.com/revel/revel"
 	"strings"
+	"fmt"
+	"github.com/WingGao/go-utils"
+	"github.com/ungerik/go-dry"
 )
 
 func init() {
+
+	// config
+	_, err := utils.LoadConfig(dry.GetenvDefault("NXPT_GO_CONF", ""))
+	if err != nil {
+		fmt.Print("load config failed\n")
+		panic(err)
+	}
+
 	// Filters is the default set of global filters.
 	revel.Filters = []revel.Filter{
 		revel.PanicFilter, // Recover from panics and display an error page instead.
