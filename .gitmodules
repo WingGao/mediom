@@ -4,3 +4,21 @@
 [submodule "vendor/github.com/qor/admin"]
 	path = vendor/github.com/qor/admin
 	url = git@github.com:qor/admin.git
+[submodule "vendor/github.com/qor/publis"]
+	path = vendor/github.com/qor/publis
+	url = git@github.com:qor/publish.git
+[submodule "vendor/github.com/qor/qor"]
+	path = vendor/github.com/qor/qor
+	url = git@github.com:qor/qor.git
+[submodule "vendor/github.com/qor/sorting"]
+	path = vendor/github.com/qor/sorting
+	url = git@github.com:qor/sorting.git
+[submodule "vendor/github.com/qor/validations"]
+	path = vendor/github.com/qor/validations
+	url = git@github.com:qor/validations.git
+[submodule "vendor/github.com/robfig/go-cache"]
+	path = vendor/github.com/robfig/go-cache
+	url = git@github.com:robfig/go-cache.git
+[submodule "vendor/github.com/tuxychandru/pubsub"]
+	path = vendor/github.com/tuxychandru/pubsub
+	url = git@github.com:tuxychandru/pubsub.git
