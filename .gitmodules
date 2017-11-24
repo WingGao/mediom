@@ -22,3 +22,6 @@
 [submodule "vendor/github.com/tuxychandru/pubsub"]
 	path = vendor/github.com/tuxychandru/pubsub
 	url = git@github.com:tuxychandru/pubsub.git
+[submodule "vendor/github.com/russross/blackfriday"]
+	path = vendor/github.com/russross/blackfriday
+	url = git@github.com:russross/blackfriday.git
