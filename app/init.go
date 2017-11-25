@@ -46,7 +46,7 @@ func init() {
 	train.Config.SASS.LineNumbers = false
 	train.Config.Verbose = true
 	train.Config.BundleAssets = true
-
+	train.Init()
 	// csrf.ExemptedGlob("/msg")
 
 	revel.OnAppStart(func() {
