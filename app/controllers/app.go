@@ -11,6 +11,8 @@ import (
 	"strings"
 	"github.com/parnurzeal/gorequest"
 	"github.com/json-iterator/go"
+	"github.com/WingGao/go-utils"
+	"net"
 )
 
 // App base controller
@@ -23,6 +25,9 @@ const (
 	JSON_CODE_NO_LOGIN = -1
 )
 
+var (
+	pxHost net.TCPAddr
+)
 
 // Finish request
 func (c *App) Finish(r revel.Result) {
@@ -32,7 +37,7 @@ func (c *App) Finish(r revel.Result) {
 
 // Before action
 func (c *App) Before() revel.Result {
-	c.prependcurrentUser()
+	c.getUserFromMain()
 	c.ViewArgs["validation"] = nil
 	c.ViewArgs["logined"] = c.isLogined()
 	c.ViewArgs["current_user"] = c.currentUser
@@ -62,7 +67,8 @@ func (c *App) getUserFromMain() bool {
 	if err != nil {
 		return false
 	}
-	url := fmt.Sprintf("http://%s/api/user/auth?token=wing.token&sid=%s", "127.0.0.1:7031", cookie.Value)
+	addr, _ := net.ResolveTCPAddr("tcp", utils.DefaultConfig.Addr)
+	url := fmt.Sprintf("http://127.0.0.1:%d/api/user/auth?token=wing.token&sid=%s", addr.Port, cookie.Value)
 	//resp, body, errs := request.Get(url).End()
 	_, body, errs := request.Get(url).End()
 	if len(errs) > 0 {
@@ -71,7 +77,7 @@ func (c *App) getUserFromMain() bool {
 	bs := []byte(body)
 	jsoniter.Get(bs, "")
 	u := &User{
-		Login: jsoniter.Get(bs, "Nickname").ToString(),
+		Login: jsoniter.Get(bs, "Username").ToString(),
 		Group: jsoniter.Get(bs, "Group").ToUint32(),
 	}
 	u.Id = jsoniter.Get(bs, "ID").ToInt32()

@@ -33,11 +33,11 @@ class Notifier
 
   showTooltip: ->
     console.log "show notifications tip"
-//    $('.main-container').prepend("<div class='alert alert-info' id='notification-alert'><a href='#' id='link_enable_notifications'>点击这里</a> 开启桌面提醒通知功能。 <a class='close fa fa-close' data-dismiss='alert' href='#'></a></div>")
-//    $("#notification-alert").alert()
-//    $('#notification-alert').on 'click', 'a#link_enable_notifications', (e) =>
-//      e.preventDefault()
-//      @requestPermission(@setPermission)
+#    $('.main-container').prepend("<div class='alert alert-info' id='notification-alert'><a href='#' id='link_enable_notifications'>点击这里</a> 开启桌面提醒通知功能。 <a class='close fa fa-close' data-dismiss='alert' href='#'></a></div>")
+#    $("#notification-alert").alert()
+#    $('#notification-alert').on 'click', 'a#link_enable_notifications', (e) =>
+#      e.preventDefault()
+#      @requestPermission(@setPermission)
 
   visitUrl: (url) ->
     window.location.href = url
