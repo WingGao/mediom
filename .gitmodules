@@ -1,6 +1,3 @@
-[submodule "vendor/github.com/huacnlee/train"]
-	path = vendor/github.com/huacnlee/train
-    url=git@github.com:WingGao/train.git
 [submodule "vendor/github.com/qor/admin"]
 	path = vendor/github.com/qor/admin
 	url = git@github.com:qor/admin.git
