@@ -1,8 +1,8 @@
 [submodule "vendor/github.com/qor/admin"]
 	path = vendor/github.com/qor/admin
 	url = git@github.com:qor/admin.git
-[submodule "vendor/github.com/qor/publis"]
-	path = vendor/github.com/qor/publis
+[submodule "vendor/github.com/qor/publish"]
+	path = vendor/github.com/qor/publish
 	url = git@github.com:qor/publish.git
 [submodule "vendor/github.com/qor/qor"]
 	path = vendor/github.com/qor/qor
@@ -22,3 +22,30 @@
 [submodule "vendor/github.com/russross/blackfriday"]
 	path = vendor/github.com/russross/blackfriday
 	url = git@github.com:russross/blackfriday.git
+[submodule "vendor/github.com/qor/assetfs"]
+	path = vendor/github.com/qor/assetfs
+	url = git@github.com:qor/assetfs.git
+[submodule "vendor/github.com/qor/l10n"]
+	path = vendor/github.com/qor/l10n
+	url = git@github.com:qor/l10n.git
+[submodule "vendor/github.com/qor/responder"]
+	path = vendor/github.com/qor/responder
+	url = git@github.com:qor/responder.git
+[submodule "vendor/github.com/qor/roles"]
+	path = vendor/github.com/qor/roles
+	url = git@github.com:qor/roles.git
+[submodule "vendor/github.com/qor/session"]
+	path = vendor/github.com/qor/session
+	url = git@github.com:qor/session.git
+[submodule "vendor/github.com/qor/worker"]
+	path = vendor/github.com/qor/worker
+	url = git@github.com:qor/worker.git
+[submodule "vendor/github.com/qor/audited"]
+	path = vendor/github.com/qor/audited
+	url = git@github.com:qor/audited.git
+[submodule "vendor/github.com/qor/middlewares"]
+	path = vendor/github.com/qor/middlewares
+	url = git@github.com:qor/middlewares.git
+[submodule "vendor/github.com/qor/serializable_meta"]
+	path = vendor/github.com/qor/serializable_meta
+	url = git@github.com:qor/serializable_meta.git
