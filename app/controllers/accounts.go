@@ -51,8 +51,8 @@ func (c Accounts) Create() revel.Result {
 
 func (c Accounts) Login() revel.Result {
 	//跳转到首页
-	return c.Redirect("/#/login")
-	//return c.Render()
+	//return c.Redirect("/#/login")
+	return c.Render()
 }
 
 func (c Accounts) LoginCreate() revel.Result {
