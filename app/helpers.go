@@ -103,10 +103,12 @@ func init() {
 			if u.NewRecord() {
 				return out
 			}
-			out = fmt.Sprintf("<a href='/%v' class='uname'>%v</a>", template.HTMLEscapeString(u.Login), template.HTMLEscapeString(u.Login))
+			out = fmt.Sprintf("<a hrefx='%s/user/%v' class='uname'>%v</a>",revel.Config.StringDefault("bbs.prefix", ""),
+				template.HTMLEscapeString(u.Login), template.HTMLEscapeString(u.Login))
 		default:
 			login := fmt.Sprintf("%v", obj)
-			out = fmt.Sprintf(`<a href="/%v" class="uname">%v</a>`, template.HTMLEscapeString(login), template.HTMLEscapeString(login))
+			out = fmt.Sprintf(`<a hrefx="%s/user/%v" class="uname">%v</a>`,revel.Config.StringDefault("bbs.prefix", ""),
+				template.HTMLEscapeString(login), template.HTMLEscapeString(login))
 
 		}
 
