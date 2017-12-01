@@ -11,10 +11,10 @@ $grayDark: #EEF3F5;
 $red: #EB5424;
 $redLight: #F86334;
 $redDark: #CD3A14;
-$blueText: #A1C3EE;
-$blue: #356DD0;
+$blueText: #FFF;
+$blue: #41c1f2;
 $blueLight: #317DDA;
-$blueDark: #0D54AB;
+$blueDark: #20799b;
 
 @mixin clearfix() {
   &:before,
@@ -453,6 +453,7 @@ a.followed {
       min-height: 32px;
     }
     &.deleted {
+      display: none;
       margin-bottom: 0px;
       min-height: 24px;
       padding-top: 5px;
