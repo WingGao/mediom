@@ -45,7 +45,7 @@ func (r *Reply) validate() (v revel.Validation) {
 		v.Required(r.UserId).Key("user_id").Message("不能为空")
 		v.Min(int(r.UserId), 1).Key("user_id").Message("不能为空")
 		v.MinSize(r.Body, 1).Key("内容").Message("不能为空")
-		v.MaxSize(r.Body, 10000).Key("内容").Message("最多不允许超过 10000 个子符")
+		v.MaxSize(r.Body, 10000).Key("内容").Message("最多不允许超过 10000 个字符")
 	}
 	return v
 }

@@ -45,7 +45,7 @@ func RemoveBlankChars(input []byte) []byte {
 }
 
 func LinkMentionUser(input []byte) []byte {
-	return mentionRegexp.ReplaceAll(input, []byte(`<a href="/$1" class="mention"><b>@</b>$1</a>`))
+	return mentionRegexp.ReplaceAll(input, []byte(`<a class="mention"><b>@</b>$1</a>`))
 }
 
 func LinkMentionFloor(input []byte) []byte {

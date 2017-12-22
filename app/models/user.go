@@ -175,7 +175,7 @@ func (u User) UpdatePassword(oldPassword, newPassword, confirmPassword string) (
 	if user.NewRecord() {
 		v.Error("旧密码不正确")
 	}
-	v.MinSize(newPassword, 6).Key("新密码").Message("最少要 6 个子符")
+	v.MinSize(newPassword, 6).Key("新密码").Message("最少要 6 个字符")
 	if newPassword != confirmPassword {
 		v.Error("新密码与确认新密码输入的内容不一致")
 	}

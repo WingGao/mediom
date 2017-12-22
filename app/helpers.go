@@ -10,6 +10,7 @@ import (
 	"reflect"
 	"strings"
 	"time"
+	"path"
 )
 
 var (
@@ -103,11 +104,11 @@ func init() {
 			if u.NewRecord() {
 				return out
 			}
-			out = fmt.Sprintf("<a hrefx='%s/user/%v' class='uname'>%v</a>",revel.Config.StringDefault("bbs.prefix", ""),
+			out = fmt.Sprintf("<a hrefx='%s/user/%v' class='uname'>%v</a>", revel.Config.StringDefault("bbs.prefix", ""),
 				template.HTMLEscapeString(u.Login), template.HTMLEscapeString(u.Login))
 		default:
 			login := fmt.Sprintf("%v", obj)
-			out = fmt.Sprintf(`<a hrefx="%s/user/%v" class="uname">%v</a>`,revel.Config.StringDefault("bbs.prefix", ""),
+			out = fmt.Sprintf(`<a hrefx="%s/user/%v" class="uname">%v</a>`, revel.Config.StringDefault("bbs.prefix", ""),
 				template.HTMLEscapeString(login), template.HTMLEscapeString(login))
 
 		}
@@ -328,5 +329,12 @@ func init() {
 		results = append(results, "</div>")
 		results = append(results, `<a href="#" class="share-button"><i class="fa fa-share-square-o"></i> 转发</a>`)
 		return template.HTML(strings.Join(results, ""))
+	}
+
+	revel.TemplateFuncs["app_path"] = func(url string) template.HTML {
+		if !strings.HasPrefix(url, "/bbs/") {
+			url = path.Join("/bbs", url)
+		}
+		return template.HTML(url)
 	}
 }

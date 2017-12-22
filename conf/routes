@@ -43,7 +43,7 @@ GET     /bbs/captcha                  App.Captcha
 #/bbs
 GET     /bbs/:login             Users.Show
 GET     /bbs/:login/topics      Users.Topics
-
+# 发布才开启
 GET    /bbs/assets/*filepath      Static.Serve("public/assets")
 
 
