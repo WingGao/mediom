@@ -12,6 +12,15 @@ zh-CN:
       cancel: 取消
       new:
         title: 新建
+      edit:
+        title: 编辑
+      are_you_sure: 确认操作
+      save_changes: 保存
+      cancel_edit: 取消
+      confirm:
+        button:
+          ok: 确定
+          cancel: 取消
 
   topics:
     name:
