@@ -49,3 +49,6 @@
 [submodule "vendor/github.com/qor/serializable_meta"]
 	path = vendor/github.com/qor/serializable_meta
 	url = git@github.com:qor/serializable_meta.git
+[submodule "vendor/github.com/qor/i18n"]
+	path = vendor/github.com/qor/i18n
+	url = git@github.com:qor/i18n.git

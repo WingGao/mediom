@@ -2,7 +2,7 @@ install:
 	@npm install -g coffee-script@1.6.2 node-sass
 	@go get github.com/huacnlee/train
 	@go get github.com/revel/cmd/revel
-	@go build -o $GOPATH/bin/train github.com/huacnlee/train/cmd
+	@go build -o $GOBIN/train github.com/huacnlee/train/cmd
 	@dep ensure
 server:
 	revel run github.com/huacnlee/mediom

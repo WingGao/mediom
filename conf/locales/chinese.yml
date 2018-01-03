@@ -1,0 +1,79 @@
+zh-CN:
+  qor_admin:
+    menus:
+      Topics: 帖子
+      Settings: 设置
+      Replies: 回复
+      Nodes: 节点
+      Notifications: 通知
+  qor_admin:
+    form:
+      add: 添加
+      cancel: 取消
+      new:
+        title: 新建
+
+  topics:
+    name:
+      plural: 帖子
+    actions:
+      Delete: 删除
+    attributes:
+      Title: 标题
+      Node Id: 节点Id
+      Body: 正文
+      User Id: 用户Id
+      Replies Count: 回复数
+      Created At: 创建时间
+      Updated At: 更新时间
+
+  settings:
+    name:
+      plural: 设置
+    actions:
+      Delete: 删除
+    attributes:
+      Key: 键
+      Val: 值
+
+  replies:
+    name:
+      plural: 回复
+    actions:
+      Delete: 删除
+    attributes:
+      Topic Id: 帖子Id
+      Topic: 帖子
+      User Id: 用户Id
+      User: 用户
+      Body: 正文
+      Created At: 创建时间
+      Updated At: 更新时间
+
+  nodes:
+    name:
+      plural: 节点
+    actions:
+      Delete: 删除
+    attributes:
+      Parent Id: 父节点Id
+      Name: 名称
+      Summary: 描述
+      Sort: 排序
+
+  notifications:
+    name:
+      plural: 通知
+    actions:
+      Delete: 删除
+    attributes:
+      Actor Id: 发送Id
+      Actor: 发送
+      User Id: 用户Id
+      User: 用户
+      Notify Type: 类型
+      Notifyable Type: 通知相关类型
+      Notifyable Id: 通知相关Id
+      Read: 已读
+      Created At: 创建时间
+      Updated At: 更新时间

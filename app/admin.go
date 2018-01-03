@@ -8,9 +8,12 @@ import (
 	"github.com/qor/qor"
 	"github.com/qor/sorting"
 	"github.com/qor/validations"
+	"github.com/qor/i18n"
+	"github.com/qor/i18n/backends/yaml"
 	"github.com/revel/revel"
 	"net/http"
 	"strings"
+	"path/filepath"
 )
 
 const (
@@ -30,7 +33,11 @@ var AdminFilter = func(c *revel.Controller, fc []revel.Filter) {
 }
 
 func initAdmin() {
-	Admin = admin.New(&qor.Config{DB: models.DB})
+	i18nPath, _ := filepath.Abs("conf/locales")
+	bk := yaml.New(i18nPath)
+	fmt.Printf("i18n[%s]\n", i18nPath)
+	I18n := i18n.New(bk)
+	Admin = admin.New(&admin.AdminConfig{DB: models.DB, I18n: I18n})
 	Publish = publish.New(models.DB)
 	sorting.RegisterCallbacks(models.DB)
 	validations.RegisterCallbacks(models.DB)
@@ -57,11 +64,11 @@ func initAdmin() {
 	reply.IndexAttrs("Id", "Topic", "User", "Body", "CreatedAt", "UpdatedAt")
 	reply.Meta(bodyMeta)
 
-	user := Admin.AddResource(&models.User{})
-	user.SearchAttrs("Login", "Email")
-	user.EditAttrs("Login", "Email", "Location", "GitHub", "Twitter", "HomePage", "Tagline", "Description")
-	user.Meta(&admin.Meta{Name: "Description", Type: "text"})
-	user.IndexAttrs("Id", "Login", "Email", "Location", "CreatedAt", "UpdatedAt")
+	//user := Admin.AddResource(&models.User{})
+	//user.SearchAttrs("Login", "Email")
+	//user.EditAttrs("Login", "Email", "Location", "GitHub", "Twitter", "HomePage", "Tagline", "Description")
+	//user.Meta(&admin.Meta{Name: "Description", Type: "text"})
+	//user.IndexAttrs("Id", "Login", "Email", "Location", "CreatedAt", "UpdatedAt")
 
 	node := Admin.AddResource(&models.Node{})
 	node.IndexAttrs("Id", "ParentId", "Name", "Summary", "Sort")
@@ -74,7 +81,15 @@ func initAdmin() {
 
 	mux = http.NewServeMux()
 	mux.Handle("/system/", http.FileServer(http.Dir("public")))
+	Admin.GetRouter().Use(&admin.Middleware{
+		Name: "local",
+		Handler: func(ctx *admin.Context, m *admin.Middleware) {
+			ctx.Request.Header.Set("Locale", "zh-CN")
+			m.Next(ctx)
+		},
+	})
 	Admin.MountTo(ADMIN_URL_PREFIX, mux)
+
 }
 
 func nodeCollection(resource interface{}, context *qor.Context) (results [][]string) {
