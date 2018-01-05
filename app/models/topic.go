@@ -55,7 +55,7 @@ func (t *Topic) validate() (v revel.Validation) {
 		v.Required(t.UserId).Key("user_id").Message("不能为空")
 		v.Required(t.NodeId).Key("node_id").Message("不能为空")
 		v.Min(int(t.UserId), 1).Key("user_id").Message("不正确")
-		v.MinSize(t.Title, 10).Key("标题").Message("最少要 10 个字符")
+		v.MinSize(t.Title, 5).Key("标题").Message("最少要 5 个字符")
 		v.MaxSize(t.Title, 100).Key("标题").Message("最多只能写 100 个字符")
 		v.MinSize(t.Body, 1).Key("内容").Message("不能为空")
 	}
